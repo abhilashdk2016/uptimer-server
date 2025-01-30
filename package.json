@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "npm install -g pm2 --force",
-    "start": "pm2 start ./build/src/index.js -i 5 --attach --watch | pino-pretty -c",
+    "start": "pm2 start ./build/src/index.js -i 5 --attach --watch",
     "dev": "nodemon -r tsconfig-paths/register src/index.ts",
     "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json && ts-node tools/copyAssets.ts"
   },
