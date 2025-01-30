@@ -81,7 +81,12 @@ export default class MonitorServer {
             ...(NODE_ENV !== 'development' && {
                 sameSite: 'none'
             })
-        }))
+        }));
+        app.use(cors({
+            origin: CLIENT_URL,
+            credentials: true,
+            methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+          }));
         this.graphqlRoute(app);
         this.healthRoute(app);
     }
@@ -105,7 +110,7 @@ export default class MonitorServer {
             '/graphql',
             cors({
                 origin: CLIENT_URL,
-                credentials: true
+                credentials: true,
             }),
             json({ limit: '200mb' }),
             urlencoded({ extended: true, limit: '200mb' }),
