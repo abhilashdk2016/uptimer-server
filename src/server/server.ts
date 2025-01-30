@@ -21,7 +21,7 @@ import timezone from 'dayjs/plugin/timezone';
 import customFormat from 'dayjs/plugin/customParseFormat';
 import { enableAutoRefreshJob, startMonitors, startSSLMonitors } from '@app/utils/utils';
 import { WebSocketServer, Server as WSServer } from 'ws';
-import { useServer } from "graphql-ws/use/ws";
+import { useServer } from 'graphql-ws/lib/use/ws';
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
