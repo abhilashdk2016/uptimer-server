@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "Node16",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "lib": ["DOM", "ES2022"],
     "baseUrl": ".",
     "outDir": "./build",
